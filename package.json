@@ -1,0 +1,43 @@
+{
+  "name": "rollup-plugin-no-op",
+  "version": "1.0.0",
+  "description": "Replace imported module with 'export default {}' using module IDs. Useful when using 'external' is not enough.",
+  "keywords": [
+    "rollup",
+    "plugin",
+    "rollup-plugin",
+    "no-op",
+    "noop"
+  ],
+  "homepage": "https://github.com/dmnsgn/rollup-plugin-no-op",
+  "bugs": "https://github.com/dmnsgn/rollup-plugin-no-op/issues",
+  "repository": "dmnsgn/rollup-plugin-no-op",
+  "funding": [
+    {
+      "type": "individual",
+      "url": "https://paypal.me/dmnsgn"
+    },
+    {
+      "type": "individual",
+      "url": "https://commerce.coinbase.com/checkout/56cbdf28-e323-48d8-9c98-7019e72c97f3"
+    }
+  ],
+  "license": "MIT",
+  "author": "Damien Seguin (https://github.com/dmnsgn)",
+  "sideEffects": false,
+  "type": "module",
+  "exports": "./index.js",
+  "main": "index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "test": "node --experimental-test-coverage test",
+    "test:watch": "node --watch --experimental-test-coverage test"
+  },
+  "peerDependencies": {
+    "rollup": "^3.x"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
