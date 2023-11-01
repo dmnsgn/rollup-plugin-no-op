@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-no-op",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Replace imported module with 'export default {}' using module IDs. Useful when using 'external' is not enough.",
   "keywords": [
     "rollup",
