@@ -26,7 +26,12 @@
   "author": "Damien Seguin (https://github.com/dmnsgn)",
   "sideEffects": false,
   "type": "module",
-  "exports": "./index.js",
+  "exports": {
+    ".": {
+      "types": "./types/index.d.ts",
+      "default": "./index.js"
+    }
+  },
   "main": "index.js",
   "types": "types/index.d.ts",
   "scripts": {
@@ -37,7 +42,8 @@
     "rollup": "^3.x || ^4.x"
   },
   "engines": {
-    "node": ">=20.0.0",
-    "npm": ">=9.6.4"
+    "node": ">=22.0.0",
+    "npm": ">=10.5.1",
+    "snowdev": ">=2.0.x"
   }
 }
