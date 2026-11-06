@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-no-op",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "Replace imported modules with a no-op using module IDs. Useful when using 'external' is not enough.",
   "keywords": [
     "rollup",
@@ -11,7 +11,10 @@
   ],
   "homepage": "https://github.com/dmnsgn/rollup-plugin-no-op",
   "bugs": "https://github.com/dmnsgn/rollup-plugin-no-op/issues",
-  "repository": "dmnsgn/rollup-plugin-no-op",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmnsgn/rollup-plugin-no-op.git"
+  },
   "funding": [
     {
       "type": "individual",
@@ -38,14 +41,14 @@
     "test": "node --experimental-test-coverage --test-coverage-exclude=test/* test",
     "test:watch": "node --watch --experimental-test-coverage --test-coverage-exclude=test/* test"
   },
+  "devDependencies": {
+    "rollup": "^3.x || ^4.x"
+  },
   "peerDependencies": {
     "rollup": "^3.x || ^4.x"
   },
   "packageManager": "npm@11.12.1",
   "engines": {
     "node": ">=26.0.0"
-  },
-  "devDependencies": {
-    "rollup": "^3.x || ^4.x"
   }
 }

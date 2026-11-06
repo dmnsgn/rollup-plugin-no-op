@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+# [1.1.0](https://github.com/dmnsgn/rollup-plugin-no-op/compare/v1.0.2...v1.1.0) (2026-11-06)
+
+### Features
+
+* replace modules by file type and add replacements option ([61c04ec](https://github.com/dmnsgn/rollup-plugin-no-op/commit/61c04ec592f4aa40c4b8fe4bffe44a1c7ce37320))
+
 ## [1.0.2](https://github.com/dmnsgn/rollup-plugin-no-op/compare/v1.0.1...v1.0.2) (2024-06-21)
 
 
