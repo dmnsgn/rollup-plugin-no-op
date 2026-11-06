@@ -12,11 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node_version: ["18", "19"]
+        node_version: ["26"]
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
           node-version: ${{ matrix.node_version }}
-      - run: npm ci
+          cache: "npm"
+      - run: npm ci --verbose
       - run: npm test
