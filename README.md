@@ -10,7 +10,7 @@
 [![linted with eslint](https://img.shields.io/badge/linted_with-ES_Lint-4B32C3.svg?logo=eslint)](https://github.com/eslint/eslint)
 [![license](https://img.shields.io/github/license/dmnsgn/rollup-plugin-no-op)](https://github.com/dmnsgn/rollup-plugin-no-op/blob/main/LICENSE.md)
 
-Replace imported module with `export default {}` using module IDs. Useful when using [external](https://rollupjs.org/configuration-options/#external) is not enough.
+Replace imported modules with a no-op using module IDs. Useful when using [external](https://rollupjs.org/configuration-options/#external) is not enough.
 
 [![paypal](https://img.shields.io/badge/donate-paypal-informational?logo=paypal)](https://paypal.me/dmnsgn)
 [![coinbase](https://img.shields.io/badge/donate-coinbase-informational?logo=coinbase)](https://commerce.coinbase.com/checkout/56cbdf28-e323-48d8-9c98-7019e72c97f3)
@@ -39,6 +39,27 @@ export default {
     noOp({ ids: ["inspector"] }), // Replace Node.js built-in "inspector"
   ],
 };
+```
+
+Module IDs can have a query. The replacement depends on the file type, as `export default {}` isn't valid everywhere:
+
+| Module ID      | Default replacement |
+| -------------- | ------------------- |
+| `.json`        | `{}`                |
+| `.cjs`, `.cts` | empty string        |
+| any other      | `export default {}` |
+
+Use `replacements` to change these. A module ID matching none is replaced by `export default {}`:
+
+```js
+noOp({
+  ids: ["inspector", "./data.json", "./styles.css"],
+  // Same as @rollup/plugin-alias, first match wins. Code or `load` hook result.
+  replacements: [
+    { find: /\.json$/, replacement: "[]" },
+    { find: /.*/, replacement: "export default null" },
+  ],
+});
 ```
 
 Then call `rollup` either via the [CLI](https://www.rollupjs.org/guide/en/#command-line-reference) or the [API](https://www.rollupjs.org/guide/en/#javascript-api).

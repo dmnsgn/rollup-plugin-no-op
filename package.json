@@ -1,7 +1,7 @@
 {
   "name": "rollup-plugin-no-op",
   "version": "1.0.2",
-  "description": "Replace imported module with 'export default {}' using module IDs. Useful when using 'external' is not enough.",
+  "description": "Replace imported modules with a no-op using module IDs. Useful when using 'external' is not enough.",
   "keywords": [
     "rollup",
     "plugin",
@@ -32,18 +32,20 @@
       "default": "./index.js"
     }
   },
-  "main": "index.js",
-  "types": "types/index.d.ts",
+  "main": "./index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
-    "test": "node --experimental-test-coverage test",
-    "test:watch": "node --watch --experimental-test-coverage test"
+    "test": "node --experimental-test-coverage --test-coverage-exclude=test/* test",
+    "test:watch": "node --watch --experimental-test-coverage --test-coverage-exclude=test/* test"
   },
   "peerDependencies": {
     "rollup": "^3.x || ^4.x"
   },
+  "packageManager": "npm@11.12.1",
   "engines": {
-    "node": ">=22.0.0",
-    "npm": ">=10.5.1",
-    "snowdev": ">=2.0.x"
+    "node": ">=26.0.0"
+  },
+  "devDependencies": {
+    "rollup": "^3.x || ^4.x"
   }
 }
